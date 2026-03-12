@@ -148,6 +148,19 @@ main {
     height: 75px;
   }
 
+.profile {
+  display: flex;
+  border-left: #00000098 1px solid;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;width: 20%;
+}
+
+.profile img {
+  width: 18px;
+  height: 21px;
+}
+
 
 
 

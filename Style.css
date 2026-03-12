@@ -9,13 +9,17 @@ body {
     background-color: black;
 }
 
+header {
+    width: 100%;
+    height: 10vh;
+}
+
 .glassButton {
     width: 250px;
     height: 75px;
     background-color: black;
     transform: skew(-20deg); 
-    border-radius: 10px;
-    margin: 50px;
+    border-radius: 7.5px;
     background: rgba(0, 0, 0, 0.67);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
@@ -24,6 +28,8 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.4);
     border-left: 1px solid rgba(255, 255, 255, 0.4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    align-items: center;
+    display: flex;
   }
 
 .items-list{

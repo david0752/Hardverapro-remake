@@ -127,6 +127,22 @@ main {
   padding: 10px;
 }
 
+.item-name {
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.ar {
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+#kiemelt {
+    height: 70%;
+    font-weight: bold;
+}
+
 .item img {
     width: 100px;
     height: 75px;

@@ -1,44 +1,78 @@
 * {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: black;
+  background-color: black;
 }
 
 header {
-    width: 100%;
-    height: 10vh;
+  width: 100%;
+  height: 10vh;
 }
 
 .glassButton {
-    width: 250px;
-    height: 75px;
-    background-color: black;
-    transform: skew(-20deg); 
-    border-radius: 7.5px;
-    background: rgba(0, 0, 0, 0.67);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    border-left: 1px solid rgba(255, 255, 255, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    align-items: center;
-    display: flex;
-  }
-
-main {
-    width: 100%;
-    height: 100vh;
+  width: 250px;
+  height: 75px;
+  background-color: black;
+  transform: skew(-20deg);
+  border-radius: 7.5px;
+  background: rgba(0, 0, 0, 0.67);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  align-items: center;
+  display: flex;
 }
 
-.items-list{
-    background-color: rgb(255, 255, 255);
-    width: 60%;
-    height: 50%;
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+.search {
+    width: 100%;
+    height: 30%;
+    background-image: url(Images/Main-Background.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.items-list {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  left: 7%;
+  display: flex;
+  border-radius: 20px;
+  width: 50%;
+  height: 70%;
+}
+
+.kiemeltek {
+  width: 100%;
+  height: 13%;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  border: rgb(116, 113, 113) 2px solid;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+
+.item img {
+  width: 100px;
+  height: 75px;
 }

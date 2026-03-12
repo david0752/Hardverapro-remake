@@ -19,10 +19,11 @@ header {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin-left: 15px;
 }
 
-.logoGlassBG {
-  width: 250px;
+.navBtnBackground {
+  width: 185px;
   height: 65px;
   background-color: black;
   transform: skew(-20deg);
@@ -38,10 +39,20 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  z-index: 1;
+  position: absolute;
 }
 
-.glassButton {
-  width: 200px;
+.navBtnText {
+  z-index: 10;
+  position: absolute;
+}
+
+.glassButtonLOGO {
+  width: 210px;
   height: 65px;
   background-color: black;
   transform: skew(-20deg);
@@ -66,10 +77,11 @@ header {
   transform: skew(20deg);
 }
 
-.logoGlassBG img {
+.glassButtonLOGO img {
   transform: skew(20deg);
-  margin-right: 10px;
+  margin-right: 5px;
   margin-bottom: 2.5px;
+  width: 175px;
 }
 
 main {

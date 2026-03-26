@@ -1,0 +1,13 @@
+users – regisztrált felhasználók, hirdetők és vevők.
+
+categories – hierarchikus kategóriák a hardver típusokhoz (CPU, GPU stb.).
+
+listings – egy hirdetés: cím, leírás, ár, hely, kategória, státusz.
+
+listing_images – minden hirdetéshez több kép, egy lehetséges “cover” jelöléssel.
+
+conversations + messages – eladók és vevők közötti üzenetváltás.
+
+ratings – eladóra adott értékelések, ahogy a PH‑nál is működik az értékelési rendszer.
+
+favorites, reports – kedvencek és jelentések, hardveraprós UX‑hez fontosak.

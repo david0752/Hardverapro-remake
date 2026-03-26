@@ -135,6 +135,7 @@ main {
   padding: 0 40px;
   font-weight: bold;
   cursor: pointer;
+  font-size: medium;
 }
 
 /* Kategóriák */
@@ -174,6 +175,7 @@ main {
 .filter-bar {
   background: #ffcc00;
   display: flex;
+  width: 64%;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;

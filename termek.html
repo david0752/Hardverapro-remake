@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="Fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="Fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="Fontawesome/css/solid.min.css">
+    <title>Hardverapro</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- HARDVERAPRO logo gomb -->
+            <div class="navButtonLogo">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText"><img src="./Images/logo.png" alt="HARDVERAPRO"></p>
+            </div>
+            <!-- További navigáció -->
+            <div class="navButton">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText">PROHARDVER!</p>
+            </div>
+            <div class="navButton">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText">Mobilarena</p>
+            </div>
+            <div class="navButton">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText">LOGOUT</p>
+            </div>
+            <!-- User profil (csak ikon, mint a képen) -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- Kereső sáv -->
+        <div class="search-bar">
+            <input type="text" placeholder="Itt megtalálod, amit keresel!" id="searchInput">
+            <button class="search-btn">Keresés</button>
+        </div>
+
+        <!-- Kategóriák -->
+        <div class="categories">
+            <div class="category-item">
+                <i class="fa-solid fa-microchip"></i>
+                <span>Hardver</span>
+            </div>
+            <div class="category-item">
+                <i class="fa-solid fa-laptop"></i>
+                <span>Notebook</span>
+            </div>
+            <div class="category-item">
+                <i class="fa-solid fa-desktop"></i>
+                <span>PC, Szerver</span>
+            </div>
+            <div class="category-item">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>Mobil, Tablet</span>
+            </div>
+            <div class="category-item">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>Konzol</span>
+            </div>
+            <div class="category-item">
+                <i class="fa-solid fa-tv"></i>
+                <span>TV-Audió</span>
+            </div>
+            <div class="category-item">
+                <i class="fa-solid fa-camera"></i>
+                <span>Fotó, videó</span>
+            </div>
+            <div class="category-item">
+                <i class="fa-solid fa-ellipsis"></i>
+                <span>Egyéb</span>
+            </div>
+        </div>
+
+        <!-- Sárga filter/pagination sáv -->
+        <div class="filter-bar">
+            <div class="pagination-controls">
+                <button class="arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <span class="page-info">1-100 db / frissítettek</span>
+                <button class="arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="view-options">
+                <button class="view-btn active"><i class="fa-solid fa-table-cells"></i></button>
+                <button class="view-btn"><i class="fa-solid fa-list"></i></button>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Bal oldal: hirdetések -->
+            
+
+            <!-- Jobb oldal: Fontos tudnod + Állásajánlatok -->
+            <div class="sidebar">
+                <!-- Fontos tudnod -->
+                <div class="fontos-tudnod">
+                    <div class="fontos-tudnod-header">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Fontos tudnod!</span>
+                    </div>
+                    <div class="fontos-tudnod-main">
+                        <p><strong>Hogyan működik a Hardverapro?</strong></p>
+                        <p>Soha ne utalj előre! Probléma, csalás esetén bármely hirdetésben ott a "Jelentem" gomb, használd!</p>
+                        <p><strong>Mit tilos hirdetni?</strong></p>
+                        <p><a href="#">További információk</a></p>
+                    </div>
+                </div>
+
+                <!-- Állásajánlatok -->
+                <div class="allasajanlatok">
+                    <div class="allasajanlatok-header">
+                        <span>Állásajánlatok</span>
+                    </div>
+                    <div class="allas-list">
+                        <!-- 4 db állás (a kép szerint) -->
+                        <div class="allas-item">
+                            <div class="allas-top">
+                                <img src="./Images/proba-img.jpg" alt="Állás kép">
+                                <span>Számítástechnikai értékesítő</span>
+                            </div>
+                            <div class="allas-bottom">
+                                <p><strong>Cég:</strong> Laptopműhely Bt.</p>
+                                <p><strong>Város:</strong> Budapest</p>
+                                <button class="reszletek-btn">Részletek</button>
+                            </div>
+                        </div>
+                        <!-- Ismétlődik 3x -->
+                        <div class="allas-item"> <!-- ugyanaz --> </div>
+                        <div class="allas-item"> <!-- ugyanaz --> </div>
+                        <div class="allas-item"> <!-- ugyanaz --> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+    <script src="Script.js"></script>
+</body>
+</html>

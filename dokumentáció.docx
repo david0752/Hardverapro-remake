@@ -1,0 +1,79 @@
+HardverApró Remake
+Online hardver apróhirdetési rendszer
+Projekt dokumentáció
+Készítették: Szántó Dávid és Kovács Róbert
+Dátum: 2026. április
+
+Tartalomjegyzék
+
+Bevezetés, a téma ismertetése, témaválasztás indoklása, szakmai célkitűzés
+Fejlesztői dokumentáció
+ 2.1. Fejlesztőkörnyezet ismertetése és választásának indoklása
+ 2.2. Kialakított adatszerkezet részletes bemutatása
+ 2.3. A program tipikus, egyedi és érdekesebb algoritmusai
+ 2.4. Tesztdokumentáció
+ 2.5. Fejlesztési lehetőségek ismertetése
+Felhasználói dokumentáció
+ 3.1. A program céljának és lényegesebb funkcióinak összefoglalása
+ 3.2. Szükséges hardvereszközök és szoftverek felsorolása
+ 3.3. Telepítés és indítás lépéseinek ismertetése
+ 3.4. A program részletes bemutatása
+ 3.5. Helytelen használatból adódó hibajelzések magyarázata
+ 3.6. Információkérés lehetőségei
+Összefoglalás, köszönetnyilvánítás
+Irodalomjegyzék
+
+
+1. Bevezetés, a téma ismertetése, témaválasztás indoklása, szakmai célkitűzés
+A HardverApró Remake egy modern, saját fejlesztésű online apróhirdetési platform, amely a népszerű hardverapro.hu oldal funkcionalitását követi, de saját igények és tanulási célok szerint készült újra. A rendszer lehetővé teszi számítógép-alkatrészek, mobilok, konzolok, perifériák és egyéb hardvertermékek vételét, eladását, valamint keresését kategóriák és kulcsszavak alapján.
+A témaválasztás indoka kettős: egyrészt mindketten (én és Robi) régóta aktív felhasználói vagyunk a hardverapro.hu-nak, és láttuk, hogy a felület már elavult, a keresés nehézkes, a mobilbarát megjelenés hiányos. Másrészt ez a projekt kiváló lehetőséget nyújtott a full-stack webfejlesztés gyakorlati elsajátítására (PHP, MySQL, HTML/CSS/JS). A szakmai célkitűzésünk az volt, hogy egy működőképes, biztonságos, felhasználóbarát webalkalmazást hozzunk létre, amely valós piaci igényt szolgál ki, és egyben demonstrálja a tanult technológiákat. A célközönség elsősorban PC-építők, gamerek, IT-érdeklődők és hobbi-felhasználók Magyarországon.
+A program regisztráció nélkül is böngészhető, de hirdetésfeladáshoz, üzenetküldéshez és saját hirdetések kezeléséhez regisztráció szükséges.
+
+
+2.4. Tesztdokumentáció
+A programot teszteltük:
+
+Windows 11 + Chrome/Firefox/Edge
+Linux (Ubuntu VM) + Firefox
+Különböző felbontásokon (1920×1080, 1366×768, mobil nézet)
+
+
+3. Felhasználói dokumentáció
+3.1. A program céljának és lényegesebb funkcióinak összefoglalása
+Ez egy számítógépes webalkalmazás, amelyben hardvertermékeket (PC alkatrészek, mobilok, konzolok stb.) lehet hirdetni és keresni – pontosan úgy, mint a hardverapro.hu-n, de modernebb felülettel.
+3.2. Szükséges hardvereszközök és szoftverek
+Bármilyen modern számítógép vagy okostelefon internetkapcsolattal. Szükséges: böngésző (Chrome, Firefox, Edge, Safari).
+3.3. Telepítés és indítás lépéseinek ismertetése
+
+
+3.4. A program részletes bemutatása
+
+Regisztráció nélküli használat: böngészés, keresés, hirdetések megtekintése.
+Regisztráció: felhasználónév (3-50 karakter, ékezetes betűk engedélyezettek), e-mail, jelszó (min. 8 karakter, 1 nagybetű, 1 szám).
+Hirdetésfeladás: cím, leírás, ár, kategória, állapot, max. 5 db kép (JPG/PNG, max. 2 MB/fájl, automatikusan átméretezve).
+Keresés: kulcsszavak (több szó esetén AND), kategória, árintervallum. Ékezetes betűk és kis/nagybetű nem számít.
+Admin felület: hirdetések moderálása, felhasználók kezelése (csak admin joggal).
+
+
+3.5. Helytelen használatból adódó hibajelzések magyarázata
+
+Hiányos űrlap → „Minden mező kitöltése kötelező!”
+Rossz e-mail formátum → „Érvénytelen e-mail cím!”
+Már létező e-mail → „Ez az e-mail cím már regisztrálva van!”
+Túl nagy kép → „A fájl mérete maximum 2 MB lehet!”
+Nem támogatott formátum → „Csak JPG és PNG fájlok engedélyezettek!”
+
+
+4. Összefoglalás, köszönetnyilvánítás
+A projekt kitűzött céljait 100%-ban sikerült megvalósítanunk: működő, biztonságos, jól használható webalkalmazás készült. A legnagyobb kihívás a képfeltöltés és a keresőmotor finomhangolása volt, de ezekből tanultuk a legtöbbet (GD library, dinamikus SQL).
+A program további hasznosítása: GitHub-ra feltöltve portfólióként használható, később akár éles szerverre is kitehetjük.
+Köszönetnyilvánítás
+Köszönet Robi-nak a közös munkáért és a kitartásért, a szüleinknek a türelemért és támogatásért, valamint a tanárunknak a szakmai segítségért.
+
+Weboldalak:
+
+PHP hivatalos dokumentáció – https://www.php.net/manual/hu/
+MySQL referencia kézikönyv – https://dev.mysql.com/doc/refman/8.0/en/
+GD library képkezelés – https://www.php.net/manual/hu/book.image.php
+HardverApró inspiráció – https://hardverapro.hu/
+dbdesigner.net – adatbázis diagram készítés – https://www.dbdesigner.net/

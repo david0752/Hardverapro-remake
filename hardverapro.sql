@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Ápr 16. 00:55
--- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.2.12
+-- Létrehozás ideje: 2026. Ápr 16. 13:08
+-- Kiszolgáló verziója: 10.4.28-MariaDB
+-- PHP verzió: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,13 +37,14 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
-(7, 'Egyéb'),
-(6, 'Fotó-videó'),
-(4, 'Konzol'),
-(3, 'Mobil, tablet'),
-(1, 'Notebook'),
-(2, 'PC, szerver'),
-(5, 'TV-audió');
+(8, 'Egyéb'),
+(7, 'Fotó, video'),
+(1, 'Hardver'),
+(5, 'Konzol'),
+(4, 'Mobil, tablet'),
+(2, 'Notebook'),
+(3, 'PC, szerver'),
+(6, 'TV-audió');
 
 -- --------------------------------------------------------
 
@@ -176,7 +177,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT a táblához `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT a táblához `conversations`

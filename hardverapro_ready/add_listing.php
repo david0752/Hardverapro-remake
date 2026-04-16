@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("issdis", $user_id, $title, $desc, $price, $category_id, $city);
     $stmt->execute();
 
-    header("Location: index.php");
+    header("Location: index2.php");
     exit;
 }
 

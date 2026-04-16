@@ -12,5 +12,5 @@ $stmt = $conn->prepare("DELETE FROM listings WHERE id=? AND user_id=?");
 $stmt->bind_param("ii",$id,$_SESSION["user_id"]);
 $stmt->execute();
 
-header("Location: index.php");
+header("Location: index2.php");
 ?>

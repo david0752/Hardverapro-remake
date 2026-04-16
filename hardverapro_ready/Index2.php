@@ -79,6 +79,13 @@ $result = $stmt->get_result();
                 <div class="navBtnBackground"></div>
                 <p class="navBtnText">LOGOUT</p>
             </div>
+            <?php if(isset($_SESSION["user_id"])): ?>
+        <p id="fiok">Bejelentkezve mint <strong id="nev"><?= htmlspecialchars($_SESSION["username"]) ?></strong> | 
+        <a href="logout.php">Kijelentkezés</a> | 
+        <a href="add_listing.php">+ Hirdetés feladása</a></p>
+    <?php else: ?>
+        <p><a href="login.php">Bejelentkezés</a> | <a href="register.php">Regisztráció</a></p>
+    <?php endif; ?>
             <!-- User profil (csak ikon, mint a képen) -->
         </nav>
     </header>
@@ -154,6 +161,20 @@ $result = $stmt->get_result();
         <?php while($row = $result->fetch_assoc()): ?>
 <a href="termek.php?id=<?= $row['id'] ?>" class="card">
 
+
+<div class="card-media">
+
+<?php
+    $images = json_decode($row['images'] ?? '["asd.jpg", "asd2.jpg"]', true);
+?>
+
+<div class="carousel" data-images='<?= htmlspecialchars(json_encode($images)) ?>'>
+    <button class="nav prev" onclick="event.preventDefault()">‹</button>
+    <img src="<?= htmlspecialchars($images[0]) ?>" class="carousel-img">
+    <button class="nav next" onclick="event.preventDefault()">›</button>
+</div>
+
+</div>
     <div class="card-content">
         <div class="title">
             <?= htmlspecialchars($row['title']) ?>
@@ -164,24 +185,17 @@ $result = $stmt->get_result();
         </div>
 
         <div class="meta">
-            <?= htmlspecialchars($row['category_name'] ?? 'Nincs') ?> • 
-            <?= htmlspecialchars($row['username']) ?>
+            <?= htmlspecialchars($row['category_name'] ?? 'Nincs') ?>
         </div>
     </div>
-
-    <div class="card-media">
-
-        <?php
-            $images = json_decode($row['images'] ?? '["asd.jpg", "asd2.jpg"]', true);
-        ?>
-
-        <div class="carousel" data-images='<?= htmlspecialchars(json_encode($images)) ?>'>
-            <button class="nav prev" onclick="event.preventDefault()">‹</button>
-            <img src="<?= htmlspecialchars($images[0]) ?>" class="carousel-img">
-            <button class="nav next" onclick="event.preventDefault()">›</button>
-        </div>
-
-    </div>
+    <div class="seller-info">
+                            <img src="./Images/profie-icon.gif" alt="Profil" class="seller-icon">
+                            <div>
+                                <div class="seller-name"><?= htmlspecialchars($row['username']) ?><i class="fa-solid fa-circle-check verified"></i></div>
+                                <div class="seller-location"><?= htmlspecialchars($row['location_city']) ?></div>
+                                <div class="eloresorolt">Előresorolt</div>
+                            </div>
+                        </div>
 
 </a>
         <?php endwhile; ?>
@@ -283,5 +297,38 @@ $result = $stmt->get_result();
 
     <footer></footer>
     <script src="Script.js"></script>
+    <script>
+document.querySelectorAll(".carousel").forEach(carousel => {
+
+    const images = JSON.parse(carousel.dataset.images || '[]');
+    const img = carousel.querySelector(".carousel-img");
+
+    let index = 0;
+
+    const prev = carousel.querySelector(".prev");
+    const next = carousel.querySelector(".next");
+
+    function update() {
+        if (images.length > 0) {
+            img.src = images[index];
+        }
+    }
+
+    next.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        index = (index + 1) % images.length;
+        update();
+    });
+
+    prev.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        index = (index - 1 + images.length) % images.length;
+        update();
+    });
+
+});
+</script>
 </body>
 </html>

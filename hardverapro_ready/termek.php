@@ -46,7 +46,7 @@ if(!$row) die("Nem található hirdetés.");
     <?php endif; ?>
 
     <hr>
-    <a href="index.php">← Vissza a főoldalra</a>
+    <a href="index2.php">← Vissza a főoldalra</a>
 </div>
 
 </body>

@@ -52,6 +52,9 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <title>HardverApró</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="Fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="Fontawesome/css/solid.min.css">
 </head>
 <body>
 

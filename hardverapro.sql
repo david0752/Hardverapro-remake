@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Ápr 16. 13:08
+-- Létrehozás ideje: 2026. Ápr 16. 14:45
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -45,6 +45,20 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 (2, 'Notebook'),
 (3, 'PC, szerver'),
 (6, 'TV-audió');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `listing_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -137,6 +151,14 @@ ALTER TABLE `categories`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- A tábla indexei `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `listing_id` (`listing_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- A tábla indexei `conversations`
 --
 ALTER TABLE `conversations`
@@ -178,6 +200,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT a táblához `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT a táblához `conversations`

@@ -74,7 +74,6 @@ while ($c = $comments_result->fetch_assoc()) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asd.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="Fontawesome/css/brands.min.css">

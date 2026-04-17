@@ -334,6 +334,7 @@ hr {
 .button-accent:hover {
     --button-accent-gradient-from: rgb(22, 131, 255);
     --button-accent-gradient-to: #1c6cff;
+}
 
 /* Általános javítások + reszponzivitás */
 * {

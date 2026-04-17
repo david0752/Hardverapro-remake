@@ -57,14 +57,13 @@ $result = $stmt->get_result();
     <link rel="stylesheet" href="Fontawesome/css/brands.min.css">
     <link rel="stylesheet" href="Fontawesome/css/solid.min.css">
     <title>Hardverapro</title>
-</head>
-<body>
+</head><body>
     <header>
         <nav>
             <!-- HARDVERAPRO logo gomb -->
             <div class="navButtonLogo">
                 <div class="navBtnBackground"></div>
-                <p class="navBtnText"><img src="./Images/logo.png" alt="HARDVERAPRO"></p>
+                <p class="navBtnText"><img src="./Images/logo2.png" alt="HARDVERAPRO"></p>
             </div>
             <!-- További navigáció -->
             <div class="navButton">

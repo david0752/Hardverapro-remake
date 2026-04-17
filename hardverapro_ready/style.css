@@ -214,3 +214,92 @@ hr {
     color: white;
     padding-left: 600px;
 }
+
+/* Termékoldal specifikus elrendezés */
+.product-page .content-wrapper {
+    display: block;
+    margin-top: 20px;
+}
+
+.product-header-card {
+    background: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.product-header-card h1 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+}
+
+.product-main-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+.product-left {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.info-bar {
+    padding: 10px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    display: flex;
+    gap: 20px;
+}
+
+.product-image-box {
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    position: relative;
+}
+
+.description-box {
+    padding: 20px;
+}
+
+.price-large {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d9534f;
+    margin-bottom: 15px;
+}
+
+.sidebar-box {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.sidebar-box.warning {
+    background: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.sidebar-box h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.msg-btn {
+    width: 100%;
+    padding: 10px;
+    background: #5bc0de;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+

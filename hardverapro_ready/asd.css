@@ -7,11 +7,11 @@
 }
 
 body {
-  background: #c9c9c9;
+  background: #000000;
   line-height: 1.4;
-  background-image: url(./Images/Main-Background.jpg);
+  background-image: url(./Images/background.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 /* HEADER - javítottuk a user profilt (csak ikon, mint a képen) */
@@ -50,15 +50,13 @@ nav {
 .navBtnBackground, .navProfile {
   position: absolute;
   inset: 0;
-  background: linear-gradient(#0000007c, #00000070);
-  transform: skew(-20deg);
-  border-radius: 7.5px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
-              inset 0 0 0 1px rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.65);
   border-top: 1px solid rgba(255,255,255,0.7);
   border-left: 1px solid rgba(255,255,255,0.7);
   border-bottom: 1px solid rgba(255,255,255,0.4);
   backdrop-filter: blur(7px);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .navBtnText {
@@ -67,17 +65,24 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   z-index: 2;
 }
 
-.navBtnText img { width: 145px; height: 20px; }
+.navBtnText img { width: 138px; height: 19px; }
 
 .navButton:hover .navBtnBackground,
 .navButtonLogo:hover .navBtnBackground,
 .userProfile:hover .navProfile {
-  background: linear-gradient(#afafafa8, #4e4e4e98);
+  background: #eca501d0;
+  transition: 0.2s ease-in-out;
+}
+
+.navButton:hover .navBtnText {
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #000000;
+  transition: 0.2s ease-in-out;
 }
 
 /* BACKGROUND - javítottuk, hogy a teljes felső rész mögött legyen */
@@ -112,20 +117,32 @@ main {
 /* Kereső */
 .search-bar {
   display: flex;
-  max-width: 700px;
   margin: 0 auto 15px;
-  background: white;
-  border-radius: 30px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   overflow: hidden;
+  border-radius: 12px;
+  border-top: 1px solid rgba(255,255,255,0.7);
+  border-left: 1px solid rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  width: 40% !important;
 }
 
 .search-bar input {
   flex: 1;
+  color: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.65);
+  border-top: 1px solid rgba(255,255,255,0.7);
+  border-left: 1px solid rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(7px);
   padding: 15px 25px;
   border: none;
   font-size: 1.1rem;
   outline: none;
+}
+
+::placeholder {
+  color: rgb(0, 0, 0);
 }
 
 .search-btn {
@@ -152,7 +169,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.65);
+  border-top: 1px solid rgba(255,255,255,0.7);
+  border-left: 1px solid rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(7px);
   padding: 12px 18px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);

@@ -71,7 +71,7 @@ $result = $stmt->get_result();
                 <p class="navBtnText">PROHARDVER!</p>
             </div>
             <div class="navButton">
-                <div class="navBtnBackground"></div>
+                <div class="navBtnBackground glassBtn"></div>
                 <p class="navBtnText">Mobilarena</p>
             </div>
             <div class="navButton">
@@ -289,8 +289,8 @@ while ($row = $cat_result->fetch_assoc()) {
 
                 <!-- Állásajánlatok -->
                 <div class="allasajanlatok">
-                    <div class="allasajanlatok-header">
-                        <span>Állásajánlatok</span>
+                    <div class="tab-roof">
+                        <span>👷 Állásajánlatok</span>
                     </div>
                     <div class="allas-list">
                         <!-- 4 db állás (a kép szerint) -->
@@ -302,7 +302,7 @@ while ($row = $cat_result->fetch_assoc()) {
                             <div class="allas-bottom">
                                 <p><strong>Cég:</strong> Laptopműhely Bt.</p>
                                 <p><strong>Város:</strong> Budapest</p>
-                                <button class="reszletek-btn">Részletek</button>
+                                <button class="button-accent">Részletek</button>
                             </div>
                         </div>
                         <!-- Ismétlődik 3x -->

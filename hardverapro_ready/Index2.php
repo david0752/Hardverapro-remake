@@ -304,10 +304,18 @@ while ($row = $cat_result->fetch_assoc()) {
                                 <button class="button-accent">Részletek</button>
                             </div>
                         </div>
-                        <!-- Ismétlődik 3x -->
-                        <div class="allas-item"> <!-- ugyanaz --> </div>
-                        <div class="allas-item"> <!-- ugyanaz --> </div>
-                        <div class="allas-item"> <!-- ugyanaz --> </div>
+                        <hr>
+                        <div class="allas-item">
+                            <div class="allas-top">
+                                <img src="./Images/proba-img.jpg" alt="Állás kép">
+                                <span>Számítástechnikai értékesítő</span>
+                            </div>
+                            <div class="allas-bottom">
+                                <p><strong>Cég:</strong> Laptopműhely Bt.</p>
+                                <p><strong>Város:</strong> Budapest</p>
+                                <button class="button-accent">Részletek</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -48,50 +48,49 @@ $result = $stmt->get_result();
 
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asd.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="Fontawesome/css/brands.min.css">
     <link rel="stylesheet" href="Fontawesome/css/solid.min.css">
     <title>Hardverapro</title>
-</head><body>
+</head>
+
+<body>
     <header>
         <nav>
             <!-- HARDVERAPRO logo gomb -->
-        <div class="navButtonLogo">
-        <img src="./Images/logo2.png">
-        </div>
-
-        <div class="navButton">
-        <span class="navBtnText">PROHARDVER!</span>
-        </div>
-
-        <div class="navButton">
-        <span class="navBtnText">Mobilarena</span>
-        </div>
-            <?php if(isset($_SESSION["user_id"])): ?>
-        <p id="fiok">Bejelentkezve mint <strong id="nev"><?= htmlspecialchars($_SESSION["username"]) ?></strong> | 
-        <a href="logout.php">Kijelentkezés</a> | 
-        <a href="add_listing.php">+ Hirdetés feladása</a></p>
-    <?php else: ?>
-        <p><a href="login.php">Bejelentkezés</a> | <a href="register.php">Regisztráció</a></p>
-    <?php endif; ?>
-            <!-- User profil (csak ikon, mint a képen) -->
+            <div class="navButtonLogo">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText"><img src="./Images/logo.png" alt="HARDVERAPRO"></p>
+            </div>
+            <!-- További navigáció -->
+            <div class="navButton">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText">PROHARDVER!</p>
+            </div>
+            <div class="navButton">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText">Mobilarena</p>
+            </div>
+            <div class="navButton">
+                <div class="navBtnBackground"></div>
+                <p class="navBtnText">LOGOUT</p>
+            </div>
         </nav>
     </header>
 
     <main>
         <!-- Kereső sáv -->
-        <form method="get">
-            <div class="search-bar">
-                <input type="text" name="q" placeholder="Itt megtalálod, amit keresel!" id="searchInput" value="<?= htmlspecialchars($search) ?>">
-                <button class="search-btn">Keresés</button>
-            </div>
-        </form>
+        <div class="search-bar">
+            <input type="text" placeholder="Itt megtalálod, amit keresel!" id="searchInput">
+            <button class="search-btn">Keresés</button>
+        </div>
 
-        <!-- Kategóriák -->
         <?php
 // 1. Design tömb (marad a fix sorrend)
 $design = [
@@ -146,6 +145,14 @@ while ($row = $cat_result->fetch_assoc()) {
     <?php endforeach; ?>
 </div>
 
+
+
+
+
+
+
+
+
         <!-- Sárga filter/pagination sáv -->
         <div class="filter-bar">
             <div class="pagination-controls">
@@ -168,51 +175,44 @@ while ($row = $cat_result->fetch_assoc()) {
                 </div>
                 <div class="ads-list">
                     <!-- 4 db kiemelt hirdetés (pontosan a kép szerint) -->
-                    <?php if($result->num_rows == 0): ?>
-        <p>Nincs találat.</p>
-    <?php else: ?>
-        <?php while($row = $result->fetch_assoc()): ?>
-<a href="termek.php?id=<?= $row['id'] ?>" class="card">
+                    <?php if ($result->num_rows == 0): ?>
+                        <p>Nincs találat.</p>
+                    <?php else: ?>
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <a href="termek.php?id=<?= $row['id'] ?>" class="card">
 
+                                <div class="card-content">
+                                    <div class="title">
+                                        <?= htmlspecialchars($row['title']) ?>
+                                    </div>
 
-<div class="card-media">
+                                    <div class="price">
+                                        <?= number_format($row['price'], 0, " ", " ") ?> Ft
+                                    </div>
 
-<?php
-    $images = json_decode($row['images'] ?? '["asd.jpg", "asd2.jpg"]', true);
-?>
+                                    <div class="meta">
+                                        <?= htmlspecialchars($row['category_name'] ?? 'Nincs') ?> •
+                                        <?= htmlspecialchars($row['username']) ?>
+                                    </div>
+                                </div>
 
-<div class="carousel" data-images='<?= htmlspecialchars(json_encode($images)) ?>'>
-    <button class="nav prev" onclick="event.preventDefault()">‹</button>
-    <img src="<?= htmlspecialchars($images[0]) ?>" class="carousel-img">
-    <button class="nav next" onclick="event.preventDefault()">›</button>
-</div>
+                                <div class="card-media">
 
-</div>
-    <div class="card-content">
-        <div class="title">
-            <?= htmlspecialchars($row['title']) ?>
-        </div>
+                                    <?php
+                                    $images = json_decode($row['images'] ?? '["asd.jpg", "asd2.jpg"]', true);
+                                    ?>
 
-        <div class="price">
-            <?= number_format($row['price'], 0, " ", " ") ?> Ft
-        </div>
+                                    <div class="carousel" data-images='<?= htmlspecialchars(json_encode($images)) ?>'>
+                                        <button class="nav prev" onclick="event.preventDefault()">‹</button>
+                                        <img src="<?= htmlspecialchars($images[0]) ?>" class="carousel-img">
+                                        <button class="nav next" onclick="event.preventDefault()">›</button>
+                                    </div>
 
-        <div class="meta">
-            <?= htmlspecialchars($row['category_name'] ?? 'Nincs') ?>
-        </div>
-    </div>
-    <div class="seller-info">
-                            <img src="./Images/profie-icon.gif" alt="Profil" class="seller-icon">
-                            <div>
-                                <div class="seller-name"><?= htmlspecialchars($row['username']) ?><i class="fa-solid fa-circle-check verified"></i></div>
-                                <div class="seller-location"><?= htmlspecialchars($row['location_city']) ?></div>
-                                <div class="eloresorolt">Előresorolt</div>
-                            </div>
-                        </div>
+                                </div>
 
-</a>
-        <?php endwhile; ?>
-    <?php endif; ?>
+                            </a>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Normál hirdetések -->
@@ -240,7 +240,7 @@ while ($row = $cat_result->fetch_assoc()) {
                         </div>
                     </div>
                     <!-- Ismétlődik 4x ugyanúgy (a kép szerint) -->
-                    <div class="ad-item"> <!-- ugyanaz a tartalom mint fent --> 
+                    <div class="ad-item"> <!-- ugyanaz a tartalom mint fent -->
                         <div class="ad-image-container">
                             <img src="./Images/proba-img.jpg" alt="Hirdetés kép">
                             <div class="bazar-badge">BAZAR</div>
@@ -282,8 +282,8 @@ while ($row = $cat_result->fetch_assoc()) {
 
                 <!-- Állásajánlatok -->
                 <div class="allasajanlatok">
-                    <div class="tab-roof">
-                        <span>👷 Állásajánlatok</span>
+                    <div class="allasajanlatok-header">
+                        <span>Állásajánlatok</span>
                     </div>
                     <div class="allas-list">
                         <!-- 4 db állás (a kép szerint) -->
@@ -295,21 +295,13 @@ while ($row = $cat_result->fetch_assoc()) {
                             <div class="allas-bottom">
                                 <p><strong>Cég:</strong> Laptopműhely Bt.</p>
                                 <p><strong>Város:</strong> Budapest</p>
-                                <button class="button-accent">Részletek</button>
+                                <button class="reszletek-btn">Részletek</button>
                             </div>
                         </div>
-                        <hr>
-                        <div class="allas-item">
-                            <div class="allas-top">
-                                <img src="./Images/proba-img.jpg" alt="Állás kép">
-                                <span>Számítástechnikai értékesítő</span>
-                            </div>
-                            <div class="allas-bottom">
-                                <p><strong>Cég:</strong> Laptopműhely Bt.</p>
-                                <p><strong>Város:</strong> Budapest</p>
-                                <button class="button-accent">Részletek</button>
-                            </div>
-                        </div>
+                        <!-- Ismétlődik 3x -->
+                        <div class="allas-item"> <!-- ugyanaz --> </div>
+                        <div class="allas-item"> <!-- ugyanaz --> </div>
+                        <div class="allas-item"> <!-- ugyanaz --> </div>
                     </div>
                 </div>
             </div>
@@ -318,38 +310,6 @@ while ($row = $cat_result->fetch_assoc()) {
 
     <footer></footer>
     <script src="Script.js"></script>
-    <script>
-document.querySelectorAll(".carousel").forEach(carousel => {
-
-    const images = JSON.parse(carousel.dataset.images || '[]');
-    const img = carousel.querySelector(".carousel-img");
-
-    let index = 0;
-
-    const prev = carousel.querySelector(".prev");
-    const next = carousel.querySelector(".next");
-
-    function update() {
-        if (images.length > 0) {
-            img.src = images[index];
-        }
-    }
-
-    next.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        index = (index + 1) % images.length;
-        update();
-    });
-
-    prev.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        index = (index - 1 + images.length) % images.length;
-        update();
-    });
-
-});
-</script>
 </body>
+
 </html>
